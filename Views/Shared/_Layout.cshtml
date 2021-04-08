@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @*@Styles.Render("~/Content/css")*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -19,9 +20,18 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="logo">
-                    <h1><a href="#">Online<span>Shopping Store</span></a></h1>
-                    <p>My Shop</p>
+                <div class="account">
+                    <ul>
+                        <li>
+                            <div class="hidden-xs">
+                                <h4><a>Call</a></h4>
+                                <p>018##-#####</p>
+                            </div>
+                            <div class="visible-xs">
+                                <p>018##-#####</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
