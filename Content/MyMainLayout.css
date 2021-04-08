@@ -1,0 +1,15 @@
+﻿/*Import source*/
+@import url(font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
+
+body {
+    margin: 0;
+    padding-bottom: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #333;
+    background: #fff;
+    overflow-x: hidden;
+    scrollbar-face-color: #121212;
+}
