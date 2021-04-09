@@ -95,3 +95,29 @@ h6 {
                 border-right: 1px solid #333;
                 padding-right: 12px;
             }
+
+/*[4. NAV MENU]*/
+
+
+.nav-menus {
+    border-top: 2px solid #333;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+    .nav-menus .nav-pills > li > a {
+        background: transparent;
+        color: #333;
+    }
+
+        .nav-menus .nav-pills > li > a:hover {
+            background: #eaeaea;
+            color: #333;
+        }
+
+    .nav-menus .nav-pills > .active > a,
+    .nav-menus .nav-pills > .active > a:hover,
+    .nav-menus .nav-pills > .active > a:focus {
+        background: #333;
+        color: #fff;
+    }
