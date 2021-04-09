@@ -13,3 +13,47 @@ body {
     overflow-x: hidden;
     scrollbar-face-color: #121212;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.logo {
+    margin-bottom: 40px;
+}
+
+.logo h1,
+.logo h2{
+    margin: 5px 0 5px;
+    text-align: left;
+    font-size: 32px;
+    line-height: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.logo h1 span,
+.logo h2 span{
+    font-weight: 300;
+}
+
+.logo h1 a,
+.logo h2 a{
+    color: #333;
+    text-decoration: none;
+    -webkit-transition: color 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
+    -moz-transition: color 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
+    -o-transition: color 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
+}
+
+.logo h1 a:hover,
+.logo h2 a:hover{
+    color: #888;
+    text-decoration: underline;
+}
