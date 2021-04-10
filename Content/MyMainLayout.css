@@ -1,4 +1,4 @@
-﻿/*Import source*/
+﻿/*[1. IMPORT SOURCE]*/
 @import url(font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
 
@@ -23,6 +23,8 @@ h6 {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+
+/*[3. LOGO]*/
 .logo {
     margin-bottom: 40px;
 }
@@ -49,7 +51,9 @@ h6 {
             text-decoration: none;
             -webkit-transition: color 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
             -moz-transition: color 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
+            -ms-transition: color 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
             -o-transition: color 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
+            transition: color 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
         }
 
             .logo h1 a:hover,
@@ -57,6 +61,7 @@ h6 {
                 color: #888;
                 text-decoration: underline;
             }
+
 
 .account {
     text-align: right;
@@ -194,6 +199,16 @@ h6 {
     border-radius: 50px;
 }
 
+.copyright {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+    .copyright .copyright-left {
+        text-align: left;
+    }
+
 .carousel-control .icon-prev, .carousel-control .fa-chevron-left {
     left: 30px;
 }
@@ -201,6 +216,7 @@ h6 {
 .carousel-control .icon-right, .carousel-control .fa-chevron-right {
     right: 30px;
 }
+
 
 .olContent {
     width: 100%;
@@ -254,17 +270,19 @@ h6 {
     position: relative;
 }
 
-.content { }
-
-.content .page-header {
-    padding-bottom: 5px;
-    margin: 20px 0 30px;
-    border-bottom: 1px solid #eee;
+.content {
 }
 
-.content .page-header h2{
-    font-weight: 700;
-}
+    .content .page-header {
+        padding-bottom: 5px;
+        margin: 20px 0 30px;
+        border-bottom: 1px solid #eee;
+    }
+
+        .content .page-header h2 {
+            font-weight: 700;
+        }
+
 
 .product-item {
     position: relative;
@@ -285,6 +303,7 @@ h6 {
         font-weight: 400;
     }
 
+
     .product-item .product-item-badge {
         position: absolute;
         top: 4px;
@@ -301,57 +320,47 @@ h6 {
         border-radius: 4px 0 4px 0;
     }
 
-.copyright {
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: 400;
+.copyright .copyright-right {
+    text-align: right;
 }
 
-    .copyright .copyright-left {
-        text-align: left;
+.copyright .list-social {
+    float: right;
+    margin-top: -10px;
+}
+
+    .copyright .list-social > li {
+        display: inline;
+        float: left;
+        margin: 2px 5px;
     }
 
-    .copyright .copyright-right {
-        text-align: right;
-    }
-
-    .copyright .list-social {
-        float: right;
-        margin-top: -10px;
-    }
-
-        .copyright .list-social > li {
-            display: inline;
-            float: left;
-            margin: 2px 5px;
+        .copyright .list-social > li > a {
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #ccc;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -o-border-radius: 100%;
+            border-radius: 100%;
+            font-size: 20px;
+            color: #333333;
         }
 
-            .copyright .list-social > li > a {
-                display: block;
-                width: 30px;
-                height: 30px;
-                position: relative;
-                background: #ffffff;
-                border: 1px solid #ccc;
-                -webkit-border-radius: 100%;
-                -moz-border-radius: 100%;
-                -o-border-radius: 100%;
-                border-radius: 100%;
+            .copyright .list-social > li > a:hover {
+                background: #333333;
+                border: 1px solid #333333;
                 font-size: 20px;
-                color: #333333;
+                color: #ffffff;
             }
 
-                .copyright .list-social > li > a:hover {
-                    background: #333333;
-                    border: 1px solid #333333;
-                    font-size: 20px;
-                    color: #ffffff;
-                }
-
-                .copyright .list-social > li > a .fa {
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    margin-left: -8px;
-                    margin-top: -9px;
-                }
+            .copyright .list-social > li > a .fa {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-left: -8px;
+                margin-top: -9px;
+            }
