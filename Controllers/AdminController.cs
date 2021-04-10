@@ -64,5 +64,17 @@ namespace OnlineShoppingStore.Controllers
             _unitOfWork.GetRepositoryInstance<Tbl_Product>().Update(tbl_Product);
             return RedirectToAction("Product");
         }
+
+        public ActionResult ProductAdd()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ProductAdd(Tbl_Product tbl_Product)
+        {
+            _unitOfWork.GetRepositoryInstance<Tbl_Product>().Add(tbl_Product);
+            return RedirectToAction("Product");
+        }
     }
 }
