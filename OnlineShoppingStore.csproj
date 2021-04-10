@@ -224,6 +224,9 @@
     <Compile Include="Models\ProductDetail.cs" />
     <Compile Include="Models\ShippingDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\GenericUnitOfWork.cs" />
+    <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
