@@ -9,6 +9,7 @@ namespace OnlineShoppingStore.Repository
 {
     public interface IRepository<Tbl_Entity> where Tbl_Entity : class
     {
+        IEnumerable<Tbl_Entity> GetProducts();
         IEnumerable<Tbl_Entity> GetAllRecords();
         IQueryable<Tbl_Entity> GetAllRecordsIQueryable();
         int GetAllRecordsCount();

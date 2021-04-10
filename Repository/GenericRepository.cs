@@ -110,11 +110,18 @@ namespace OnlineShoppingStore.Repository
         {
             _dbSet.Attach(entity);
             _DBEntity.Entry(entity).State = EntityState.Modified;
+            _DBEntity.SaveChanges();
         }
 
         public void UpdateByWhereClause(Expression<Func<Tbl_Entity, bool>> wherePredicat, Action<Tbl_Entity> ForEachPredict)
         {
             _dbSet.Where(wherePredicat).ToList().ForEach(ForEachPredict);
         }
+
+        public IEnumerable<Tbl_Entity> GetProducts()
+        {
+            return _dbSet.ToList();
+        }
+
     }
 }

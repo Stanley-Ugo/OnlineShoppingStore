@@ -27,7 +27,7 @@ namespace OnlineShoppingStore.DAL
         public Nullable<bool> IsDeleted { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ModiifiedDate { get; set; }
-        public Nullable<System.DateTime> Description { get; set; }
+        public string Description { get; set; }
         public string ProductImage { get; set; }
         public Nullable<bool> IsFeatured { get; set; }
         public Nullable<int> Quantity { get; set; }
