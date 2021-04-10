@@ -56,6 +56,7 @@
     <EntitySetMapping Name="Tbl_Product">
       <EntityTypeMapping TypeName="dbMyOnlineShoppingModel.Tbl_Product">
         <MappingFragment StoreEntitySet="Tbl_Product">
+          <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
           <ScalarProperty Name="ProductName" ColumnName="ProductName" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />

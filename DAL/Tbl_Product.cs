@@ -31,6 +31,7 @@ namespace OnlineShoppingStore.DAL
         public string ProductImage { get; set; }
         public Nullable<bool> IsFeatured { get; set; }
         public Nullable<int> Quantity { get; set; }
+        public Nullable<decimal> Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Cart> Tbl_Cart { get; set; }

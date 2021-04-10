@@ -67,6 +67,7 @@
     <Property Name="Quantity" Type="Int32" />
     <NavigationProperty Name="Tbl_Cart" Relationship="Self.FK__Tbl_Cart__Produc__36B12243" FromRole="Tbl_Product" ToRole="Tbl_Cart" />
     <NavigationProperty Name="Tbl_Category" Relationship="Self.FK__Tbl_Produ__Categ__286302EC" FromRole="Tbl_Product" ToRole="Tbl_Category" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="Tbl_Roles">
     <Key>

@@ -62,6 +62,7 @@
     <Property Name="ProductImage" Type="varchar(max)" />
     <Property Name="IsFeatured" Type="bit" />
     <Property Name="Quantity" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="Tbl_Roles">
     <Key>
