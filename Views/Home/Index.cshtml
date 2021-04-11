@@ -1,4 +1,5 @@
-﻿@{
+﻿@model OnlineShoppingStore.Models.Home.HomeIndexViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -58,20 +59,40 @@
 <div class="row">
     <div class="col-md-12">
         <div class="page-header">
-            <h2>Our Products<small>trends products</small></h2>
+            <h2>Our Products <small>trends products</small> </h2>
         </div>
     </div>
 </div>
 <div class="row product-container">
-    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px;">
-        <div class="thumbnail product-item" style="height:300px">
-            <img class="img-responsive" title="Click to View Product Detail" style="cursor:pointer;height:160px;width:100%" src="~/Images/81_12_24_2017_10_26_28.jpg" />
-            <div class="caption">
-                <h5>Product Name</h5>
-                <p>&#8358;50000.00</p>
-                <p>Available</p>
-                <div class="product-item-badge">New</div>
+    @foreach (var item in Model.ListOfProducts)
+    {
+        <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px;">
+            <div class="thumbnail product-item" style="height:300px">
+                <img class="img-responsive" title="Click to View Product Detail" style="cursor:pointer;height:160px;width:100%" src="~/Images/81_12_24_2017_10_26_28.jpg" />
+                <div class="caption">
+                    <h5>@item.ProductName</h5>
+                    <p>&#8358;@item.Price</p>
+                        @if(item.Quantity > 0)
+                        {
+                            <p>Available</p>
+                        }
+                        else
+                        {
+                            <p>Not Available</p>
+                        }
+                    <div class="product-item-badge">
+                        @if(item.IsFeatured == true)
+                        {
+                            <p>New</p>
+                        }
+                        else
+                        {
+                            <p>Hot Deals!!!</p>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    }
+
 </div>

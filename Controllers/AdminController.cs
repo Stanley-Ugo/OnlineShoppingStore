@@ -14,6 +14,20 @@ namespace OnlineShoppingStore.Controllers
     {
         // GET: Admin
         public GenericUnitOfWork _unitOfWork = new GenericUnitOfWork();
+
+        public List<SelectListItem> GetCategory()
+        {
+            List<SelectListItem> list = new List<SelectListItem>();
+
+            var categories = _unitOfWork.GetRepositoryInstance<Tbl_Category>().GetAllRecords();
+
+            foreach (var category in categories)
+            {
+                list.Add(new SelectListItem { Value = category.CategoryId.ToString(), Text = category.CategoryName});
+            }
+
+            return list;
+        }
         public ActionResult Dashboard()
         {
             return View();
@@ -53,14 +67,40 @@ namespace OnlineShoppingStore.Controllers
             return View(_unitOfWork.GetRepositoryInstance<Tbl_Product>().GetProducts());
         }
 
+        public ActionResult CategoryEdit(int catId)
+        {
+            
+            return View(_unitOfWork.GetRepositoryInstance<Tbl_Category>().GetFirstOrDefault(catId));
+        }
+
+        [HttpPost]
+        public ActionResult CategoryEdit(Tbl_Category tbl_Category)
+        {
+            _unitOfWork.GetRepositoryInstance<Tbl_Category>().Update(tbl_Category);
+            return RedirectToAction("Categories");
+        }
+
         public ActionResult ProductEdit(int productId)
         {
+            ViewBag.CategoryList = GetCategory();
             return View(_unitOfWork.GetRepositoryInstance<Tbl_Product>().GetFirstOrDefault(productId));
         }
 
         [HttpPost]
-        public ActionResult ProductEdit(Tbl_Product tbl_Product)
+        public ActionResult ProductEdit(Tbl_Product tbl_Product, HttpPostedFileBase file)
         {
+            string pic = null;
+
+            if (file != null)
+            {
+                pic = System.IO.Path.GetFileName(file.FileName);
+                string path = System.IO.Path.Combine(Server.MapPath("~/ProductImg/"), pic);
+                file.SaveAs(path);
+            }
+
+            tbl_Product.ProductImage = file != null ? pic : tbl_Product.ProductImage;
+
+            tbl_Product.ModiifiedDate = DateTime.Now;
             _unitOfWork.GetRepositoryInstance<Tbl_Product>().Update(tbl_Product);
             return RedirectToAction("Product");
         }
@@ -71,8 +111,20 @@ namespace OnlineShoppingStore.Controllers
         }
 
         [HttpPost]
-        public ActionResult ProductAdd(Tbl_Product tbl_Product)
+        public ActionResult ProductAdd(Tbl_Product tbl_Product, HttpPostedFileBase file)
         {
+            string pic = null;
+
+            if(file != null)
+            {
+                pic = System.IO.Path.GetFileName(file.FileName);
+                string path = System.IO.Path.Combine(Server.MapPath("~/ProductImg/"), pic);
+                file.SaveAs(path);
+            }
+
+            tbl_Product.ProductImage = pic;
+
+            tbl_Product.CreatedDate = DateTime.Now;
             _unitOfWork.GetRepositoryInstance<Tbl_Product>().Add(tbl_Product);
             return RedirectToAction("Product");
         }
