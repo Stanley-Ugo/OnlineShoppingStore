@@ -18,7 +18,7 @@ namespace OnlineShoppingStore.Models.Home
             SqlParameter[] param = new SqlParameter[] {
                 new SqlParameter("@search", search ?? (object)DBNull.Value)
             };
-            IEnumerable<Tbl_Product> data = context.Database.SqlQuery<Tbl_Product>("GetBySearch", param).ToList();
+            IEnumerable<Tbl_Product> data = context.Database.SqlQuery<Tbl_Product>("GetBySearch @search", param).ToList();
             return new HomeIndexViewModel()
             {
                 ListOfProducts = data
