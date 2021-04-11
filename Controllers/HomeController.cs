@@ -9,7 +9,7 @@ namespace OnlineShoppingStore.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string search)
+        public ActionResult Index(string search, int? page)
         {
             HomeIndexViewModel model = new HomeIndexViewModel();
             return View(model.CreateModel(search));
