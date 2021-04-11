@@ -110,3 +110,5 @@ C:\Projects\OnlineShoppingStore\bin\PagedList.dll
 C:\Projects\OnlineShoppingStore\bin\PagedList.Mvc.dll
 C:\Projects\OnlineShoppingStore\bin\PagedList.xml
 C:\Projects\OnlineShoppingStore\bin\PagedList.Mvc.xml
+C:\Projects\OnlineShoppingStore\bin\PayPal.dll
+C:\Projects\OnlineShoppingStore\bin\PayPal.xml
