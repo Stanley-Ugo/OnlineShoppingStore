@@ -75,7 +75,7 @@ namespace OnlineShoppingStore.Controllers
 
             if (Session["cart"] != null)
             {
-                List<Models.Home.Item> cart = (List<Models.Home.Item>)Session["cart"];
+                List<Models.Home.Item> cart = (List<Models.Home.Item>)(Session["cart"]);
                 foreach (var item in cart)
                 {
                     itemlist.items.Add(new Item() {
