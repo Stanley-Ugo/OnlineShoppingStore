@@ -106,3 +106,7 @@ C:\Projects\OnlineShoppingStore\obj\Debug\OnlineShoppingStore.csproj.CoreCompile
 C:\Projects\OnlineShoppingStore\obj\Debug\OnlineShoppingStore.csproj.CopyComplete
 C:\Projects\OnlineShoppingStore\obj\Debug\OnlineShoppingStore.dll
 C:\Projects\OnlineShoppingStore\obj\Debug\OnlineShoppingStore.pdb
+C:\Projects\OnlineShoppingStore\bin\PagedList.dll
+C:\Projects\OnlineShoppingStore\bin\PagedList.Mvc.dll
+C:\Projects\OnlineShoppingStore\bin\PagedList.xml
+C:\Projects\OnlineShoppingStore\bin\PagedList.Mvc.xml

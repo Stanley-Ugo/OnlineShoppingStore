@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using OnlineShoppingStore.Models.Home;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -22,7 +24,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="account">
+                @*<div class="account">
                     <ul>
                         <li>
                             <div class="hidden-xs">
@@ -34,7 +36,24 @@
                             </div>
                         </li>
                     </ul>
-                </div>
+                </div>*@
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Cart(3)<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            @if (Session["cart"] != null)
+                            {
+                                foreach (var item in (List<Item>)Session["cart"])
+                                {
+                                    <li><a href="#">@item.Product.ProductName (@item.Quantity)</a></li>
+                                }
+                            }
+
+                            <li class="divider"></li>
+                            <li><a href="#">IT</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
             <div class="row">
                 <div class="col-md-12">
