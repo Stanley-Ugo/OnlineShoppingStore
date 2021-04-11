@@ -16,8 +16,44 @@ namespace OnlineShoppingStore.Controllers
             HomeIndexViewModel model = new HomeIndexViewModel();
             return View(model.CreateModel(search, 4, page));
         }
+        public ActionResult Checkout()
+        {
+            return View();
+        }
 
-        public ActionResult AddToCart(int productId)
+        public ActionResult CheckoutDetails()
+        {
+            return View();
+        }
+        public ActionResult DecreaseQty(int productId)
+        {
+            if (Session["cart"] != null)
+            {
+                List<Item> cart = (List<Item>)Session["cart"];
+                var product = context.Tbl_Product.Find(productId);
+                foreach (var item in cart)
+                {
+                    if (item.Product.ProductId == productId)
+                    {
+                        int prevQty = item.Quantity;
+                        if (prevQty > 0)
+                        {
+                            cart.Remove(item);
+                            cart.Add(new Item()
+                            {
+                                Product = product,
+                                Quantity = prevQty - 1
+                            });
+                        }
+                        break;
+                    }
+                }
+                Session["cart"] = cart;
+            }
+            return RedirectToAction("Checkout");
+        }
+
+        public ActionResult AddToCart(int productId, string url)
         {
             if(Session["cart"] == null)
             {
@@ -37,25 +73,61 @@ namespace OnlineShoppingStore.Controllers
             {
                 List<Item> cart = (List<Item>)Session["cart"];
 
+                var count = cart.Count();
+
                 var product = context.Tbl_Product.Find(productId);
 
-                cart.Add(new Item()
+                for (int i = 0; i < count; i++)
                 {
-                    Product = product,
-                    Quantity = 1
-                });
+                    if (cart[i].Product.ProductId == productId)
+                    {
+                        int prevQty = cart[i].Quantity;
+                        cart.Remove(cart[i]);
+                        cart.Add(new Item()
+                        {
+                            Product = product,
+                            Quantity = prevQty + 1
+                        });
+                        break;
+                    }
+                    else
+                    {
+                        var prd = cart.Where(x => x.Product.ProductId == productId).SingleOrDefault();
+                        if (prd == null)
+                        {
+                            cart.Add(new Item()
+                            {
+                                Product = product,
+                                Quantity = 1
+                            });
+                        }
+                    }
+                }
 
                 Session["cart"] = cart;
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction(url);
         }
 
-        public ActionResult Contact()
+        public ActionResult RemoveFromCart(int productId)
         {
-            ViewBag.Message = "Your contact page.";
+            List<Item> cart = (List<Item>)Session["cart"];
 
-            return View();
+            //var product = context.Tbl_Product.Find(productId);
+
+            foreach (var item in cart)
+            {
+                if(item.Product.ProductId == productId)
+                {
+                    cart.Remove(item);
+                    break;
+                }
+            }
+
+            Session["cart"] = cart;
+
+            return RedirectToAction("Index");
         }
     }
 }
