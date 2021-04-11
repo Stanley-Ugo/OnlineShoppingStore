@@ -182,6 +182,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="DAL\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1817,6 +1818,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ProductImg\" />
+    <Folder Include="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
